@@ -8,10 +8,10 @@ const checkBox2 = document.getElementById("myCheck2");
 
 
 Promise.all([
-    faceapi.nets.tinyFaceDetector.loadFromUri('/webface/models'),
-    faceapi.nets.faceLandmark68Net.loadFromUri('/webface/models'),
-    faceapi.nets.faceRecognitionNet.loadFromUri('/webface/models'),
-    faceapi.nets.faceExpressionNet.loadFromUri('/webface/models')
+    faceapi.nets.tinyFaceDetector.loadFromUri('/webface99/models'),
+    faceapi.nets.faceLandmark68Net.loadFromUri('/webface99/models'),
+    faceapi.nets.faceRecognitionNet.loadFromUri('/webface99/models'),
+    faceapi.nets.faceExpressionNet.loadFromUri('/webface99/models')
   ]).then(startVideo)
 
 function startVideo() {
