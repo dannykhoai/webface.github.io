@@ -1,6 +1,10 @@
 
 
 const video = document.querySelector("video");
+const checkBox1 = document.getElementById("myCheck1");
+const checkBox2 = document.getElementById("myCheck2");
+
+ 
 
 
 Promise.all([
@@ -22,6 +26,7 @@ function startVideo() {
   }
 }
 
+
 video.addEventListener('play', () => {
     const canvas = faceapi.createCanvasFromMedia(video)
     document.body.append(canvas)
@@ -33,7 +38,9 @@ video.addEventListener('play', () => {
       canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
 
       faceapi.draw.drawDetections(canvas, resizedDetections)
-      faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
-      faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
+      if (checkBox1.checked == true){
+      faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)}
+      if (checkBox2.checked == true){
+      faceapi.draw.drawFaceExpressions(canvas, resizedDetections)}
     }, 100)
   })
